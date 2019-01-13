@@ -8,6 +8,9 @@ jobs:
       - checkout
       - run: yarn install
       - run: cd android && chmod +x gradlew && ./gradlew assembleRelease
+      - store_artifacts:
+          path: ./android/app/build/outputs
+          destination: apk-file
 
 workflows:
   version: 2
